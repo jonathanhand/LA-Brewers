@@ -9,35 +9,25 @@ export class PlaceService {
   private _places: Place[] = [
     new Place(
       'p1',
-      'Manhattan Mansion',
-      'In the heart of New York City',
-      '../assets/imgs/nyc.jpg',
-      149.99,
-      new Date('2019-01-01'),
-      new Date('2019-12-31'),
-      'u1'
+      'L.A. Brewers Win Big',
+// tslint:disable-next-line: max-line-length
+      '31 medals were awarded to 17 breweries in the Los Angeles County Brewers Guild at this year’s San Diego International Beer Competition including the honors of 2019 Champion Brewery to Angel City Brewery. ',
+      '../assets/brew-imgs/SDBeer.jpg'
     ),
     new Place(
       'p2',
-      'L\'Amour Toujours',
-      'A romantic place in Pairs',
-      '../assets/imgs/paris.jpg',
-      189.99,
-      new Date('2019-01-01'),
-      new Date('2019-12-31'),
-      'u1'
+      'L.A. Brewers Take Home Six GABF Medals',
+      '2018 Great American Beer Festival held in Denver, Colorado',
+      '../assets/brew-imgs/medals.png',
     ),
     new Place(
       'p3',
-      'The Foggy Palace',
-      'Not your average city trip!',
-      '../assets/imgs/sanf.jpg',
-      99.99,
-      new Date('2019-01-01'),
-      new Date('2019-12-31'),
-      'u1'
+      'Griffith Park Run 5k',
+      'Independent Beer Garden Run',
+      '../assets/brew-imgs/5krun.jpg',
     ),
   ];
+  //TODO: add more text for when click on details
   data: Object;
   get places() {
     console.log('getting thru http get');
@@ -57,11 +47,7 @@ export class PlaceService {
       Math.random().toString(),
       title,
       description,
-      '../assets/imgs/nyc.jpg',
-      price,
-      dateFrom,
-      dateTo,
-      'u1'
+      '../assets/imgs/nyc.jpg'
     );
     this.http.post(
       'https://beachbnb-93d74.firebaseio.com/place.json',
@@ -73,7 +59,7 @@ export class PlaceService {
 
     .subscribe((response) => {
       console.log(response);
-    })
+    });
     this._places.push(newPlace);
     console.log(this._places);
   }
@@ -85,11 +71,7 @@ export class PlaceService {
       oldPlace.id,
       title,
       description,
-      oldPlace.image,
-      oldPlace.price,
-      oldPlace.availableFrom,
-      oldPlace.availableTo,
-      oldPlace.userId
+      oldPlace.image
     );
     this._places.splice(updatedPlaceIndex, 1);
     this._places.push(updatedPlace[updatedPlaceIndex]);
