@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Place } from '../place.model';
 import { PlaceService } from '../place.service';
 import { ModalController, ActionSheetController } from '@ionic/angular';
-import { CreatebookingPage } from 'src/app/booking/createbooking/createbooking.page';
-import { BookingService } from 'src/app/booking/booking.service';
 
 @Component({
   selector: 'app-placedetail',
@@ -15,7 +13,7 @@ export class PlacedetailPage implements OnInit {
   place: Place;
   id: string;
   constructor(private route: ActivatedRoute,
-    private placeService: PlaceService) {}
+              private placeService: PlaceService) {}
     // private router: Router,
     // private modalCtrl: ModalController,
     // private ActionSheetCtrl: ActionSheetController,

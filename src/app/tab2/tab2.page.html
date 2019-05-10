@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Offers
+      Breweries
     </ion-title>
     <ion-buttons slot="primary">
       <ion-button routerLink="/newoffer">
@@ -15,6 +15,30 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-button style="display:block;margin:auto;">Map of Breweries</ion-button>
+  <ion-row>
+      <ion-col size-md="8" offset-md="2" text-center>
+        <ion-list>
+          <ion-item *ngFor= "let brewery of loadedBreweries.slice(0)">
+          <!-- [routerLink]="[
+          '/',
+          'placedetail',
+          brewery.id
+          ]"
+          detail> -->
+            <!-- <ion-thumbnail slot="start">
+              <img src = {{place.image}}>
+            </ion-thumbnail> -->
+            <ion-label>
+              <h2>{{brewery.name}}</h2>
+              <p>{{brewery.address}}</p>
+              <p>{{brewery.location}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  <!--
   <ion-grid>
     <ion-row>
       <ion-col size-md="8" offset-md="2" text-center>
@@ -36,4 +60,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+-->
 </ion-content>

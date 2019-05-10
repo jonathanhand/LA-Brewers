@@ -6,9 +6,7 @@ const routes: Routes = [
   { path: 'placedetail', loadChildren: './tab1/placedetail/placedetail.module#PlacedetailPageModule' },
   { path: 'offerdetail', loadChildren: './tab2/offerdetail/offerdetail.module#OfferdetailPageModule' },
   { path: 'newoffer', loadChildren: './tab2/newoffer/newoffer.module#NewofferPageModule' },
-  { path: 'editoffer', loadChildren: './tab2/editoffer/editoffer.module#EditofferPageModule' },
-  { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
-  { path: 'createbooking', loadChildren: './booking/createbooking/createbooking.module#CreatebookingPageModule' }
+  { path: 'editoffer', loadChildren: './tab2/editoffer/editoffer.module#EditofferPageModule' }
 ];
 @NgModule({
   imports: [

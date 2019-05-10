@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Place } from '../tab1/place.model';
-import { PlaceService } from '../tab1/place.service';
+import { Brewery } from './brewery.model';
+import { BreweryService } from './breweries.service';
+import { SegmentChangeEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-tab2',
@@ -8,12 +9,15 @@ import { PlaceService } from '../tab1/place.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page implements OnInit {
-  offers: Place[];
-  constructor (private placeService: PlaceService) {}
-  ngOnInit () {
-    this.offers = this.placeService.places;
+  loadedBreweries: Brewery[];
+  constructor(private breweryService: BreweryService) {}
+  ngOnInit() {
+    this.loadedBreweries = this.breweryService.breweries;
   }
   ionViewWillEnter() {
-    this.offers = this.placeService.places;
+    this.loadedBreweries = this.breweryService.breweries;
   }
+  // onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
+  //   console.log(event.detail);
+  // }
 }

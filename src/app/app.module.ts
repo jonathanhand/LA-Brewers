@@ -8,13 +8,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreatebookingPage } from './booking/createbooking/createbooking.page';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, CreatebookingPage],
-  entryComponents: [CreatebookingPage],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     StatusBar,
